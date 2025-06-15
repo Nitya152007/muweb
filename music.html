@@ -1,0 +1,148 @@
+<div style="text-align:center;"margin-top: 40px;"><img style="width:15%"; src="logo.png"></div>
+
+<div style="text-align:center;"margin-top: 40px;">
+<a style="padding-right: 20px;" href="home.html">Home</a>
+<a  style="padding-right: 20px;"href="about.html">About</a>
+</div>
+
+<h1 style="font-size:50px;text-align:center;"> When Weather meets Music </h1>
+<p style="font-size:25px;text-align:center; line-height:36px;margin-bottom: 50px;"> A good weather makes or ruins the mood.<br> Whether its Sunny , Rainy or just Cold , Music makes it better with just the melody to aesthetic.</br> </p>
+
+<div style="text-align:center;"><a style="font-size:25px;background-color:sky blue;padding: 15px 20px 15px 20px;color: brown;" href="https://open.spotify.com/search/weather/playlists">Read more</a></div>
+
+<hr style="width:60%;">
+
+<h1 style="font-size:36px;text-align:center;"> MUSIC RECOMMENDATION </h1>
+
+<img style="width: 33%;" src="m.png">
+<img style="width: 33%;" src="weath.png">
+<img style="width: 33%;" src="rain.png">
+
+<section id="recommendation" class="recommendation">
+
+    <h2><div style="style.weather-options button 
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 1em;
+  background-color: #87ceeb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+"Music Recommendation</h2>
+    <p>Select your weather to get the perfect playlist:</p>
+   <div class="weather-options">
+  <button data-weather="sunny">Sunny</button>
+  <button data-weather="rainy">Rainy</button>
+  <button data-weather="cold">Cold</button>
+  <button data-weather="cloudy">Cloudy</button>
+  <button data-weather="windy">Windy</button>
+</div>
+
+    <div class="playlist-box">
+      <h3><div="style="playlist-box 
+
+
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #eef;
+  border-radius: 10px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;"Recommended Playlist</h3>
+ <div id="playlists-container"></div>
+
+  <script src="script.js">
+    // Playlist data by weather type
+    const playlists = {
+      rainy: {
+        desc: "Rainy Day Ambient + Chill Vibes",
+        songs: [
+          {
+            name: "Rainy Ambient Mix (Video)",
+            url: "https://www.youtube.com/watch?v=HMnrl0tmd3k"
+          },
+          {
+            name: "Rainy Day Playlist",
+            url: "https://www.youtube.com/playlist?list=PL2qzCKTbjutI9P2NDtu49TTtLpr1-w7hA"
+          }
+        ]
+      },
+      sunny: {
+        desc: "Upbeat Indie for Sunny Days",
+        songs: [
+          {
+            name: "Indie Summer Playlist",
+            url: "https://www.youtube.com/playlist?list=PLDcnymzs18LWrKzHmzrGH1JzK4RKK9aD9"
+          }
+        ]
+      },
+      cold: {
+        desc: "Lo-fi Chill for Cold Moods",
+        songs: [
+          {
+            name: "Lo-fi Chill (Live 24/7)",
+            url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+          },
+          {
+            name: "Winter Study Playlist",
+            url: "https://www.youtube.com/playlist?list=PL1gYzPfvjqCxUykFHYKbgTcUzE1WhzB-J"
+          }
+        ]
+      }
+    };
+
+    // Load all playlists
+    const container = document.getElementById("playlists-container");
+
+    Object.entries(playlists).forEach(([weatherType, data]) => {
+      const box = document.createElement("div");
+      box.className = "playlist-box";
+
+      const heading = document.createElement("h2");
+      heading.textContent = `${weatherType.charAt(0).toUpperCase() + weatherType.slice(1)} Weather`;
+      box.appendChild(heading);
+
+      const desc = document.createElement("p");
+      desc.textContent = data.desc;
+      box.appendChild(desc);
+
+      data.songs.forEach(song => {
+        const item = document.createElement("div");
+        item.className = "playlist-item";
+
+        const name = document.createElement("span");
+        name.textContent = song.name;
+
+        const button = document.createElement("button");
+        button.className = "btn";
+        button.textContent = "Play";
+        button.onclick = () => window.open(song.url, "_blank");
+
+        item.appendChild(name);
+        item.appendChild(button);
+        box.appendChild(item);
+      });
+
+      container.appendChild(box);
+    });
+  </script>
+
+      <ul>
+        <li>🎵 Sunshine Vibes</li>
+        <li>🎵 Rainy Day Jazz</li>
+        <li>🎵 Chill Windy Tunes</li>
+</div>
+
+      </ul>
+      <button class="share-btn">Share Playlist</button>
+
+    </div>
+  </section>
+
+<img style="width: 45%;" src="rainym - Copy.png">
+<img style="width: 45%;" src="sunnym - Copy.png">
+<div style="text-align:center;"margin-top: 40px;"><img style="width:45%"; src="cold.png"></div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Musi-Cast | Weather-based Music for Every Mood</p>
+  </footer>
